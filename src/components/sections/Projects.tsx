@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import almatyAirportImg from '@assets/26-10_1784823724612.webp';
 import { useLang } from '@/contexts/LanguageContext';
+import type { Lang } from '@/i18n/translations';
 
-const additionalProjects = [
+type ML = Record<Lang, string>;
+
+const additionalProjects: ML[] = [
   { ru: "MEGA Alma-Ata — все лифты и эскалаторы", en: "MEGA Alma-Ata — all lifts & escalators", kz: "MEGA Alma-Ata — барлық лифтілер мен эскалаторлар" },
   { ru: "MEGA Park, Алматы", en: "MEGA Park, Almaty", kz: "MEGA Park, Алматы" },
   { ru: "St. Regis Astana", en: "St. Regis Astana", kz: "St. Regis Astana" },
@@ -17,15 +20,66 @@ const additionalProjects = [
   { ru: "Жилые комплексы по всему Казахстану", en: "Residential complexes across Kazakhstan", kz: "Қазақстан бойынша тұрғын үй кешендері" },
 ];
 
+const intlProjects = [
+  {
+    name: { ru: "Башня Демидов, Екатеринбург", en: "Demidov Tower, Yekaterinburg", kz: "Демидов мұнарасы, Екатеринбург" },
+    spec: { ru: "10 скоростных лифтов 4 м/с", en: "10 high-speed lifts, 4 m/s", kz: "10 жоғары жылдамдықты лифт, 4 м/с" },
+  },
+  {
+    name: { ru: "Завод СИБУР, Тобольск", en: "SIBUR Plant, Tobolsk", kz: "СИБУР зауыты, Тобольск" },
+    spec: { ru: "5-тонные промышленные лифты, экстремальная среда", en: "5-tonne industrial lifts, extreme environment", kz: "5 тонналық өнеркәсіптік лифтілер, экстремалды орта" },
+  },
+  {
+    name: { ru: "Ямал СПГ, полуостров Сабета", en: "Yamal LNG, Sabetta Peninsula", kz: "Ямал СПГ, Сабетта түбегі" },
+    spec: { ru: "Арктический проект, доступный только ледоколом", en: "Arctic project, accessible only by icebreaker", kz: "Арктикалық жоба, тек мұзжарғышпен қол жетімді" },
+  },
+  {
+    name: { ru: "ТРЦ «Пассаж» и «Радуга», Екатеринбург", en: "Passage & Raduga Mall, Yekaterinburg", kz: "Passage және Raduga СОО, Екатеринбург" },
+    spec: { ru: "Лифтовые системы для крупных ТРЦ", en: "Elevator systems for large shopping centres", kz: "Ірі сауда орталықтарына арналған лифт жүйелері" },
+  },
+];
+
 const koyoProjects = [
-  { name: "SEVEN HILLS", addr: { ru: "Алматы, пр. Гагарина, 277/7", en: "Almaty, Gagarin Ave, 277/7", kz: "Алматы, Гагарин д-лы, 277/7" }, spec: { ru: "16 лифт · 16–18 қаб. · 1000 кг · 1.5 м/с · 2019", en: "16 lifts · 16–18 fl. · 1000 kg · 1.5 m/s · 2019", kz: "16 лифт · 16–18 қаб. · 1000 кг · 1.5 м/с · 2019" } },
-  { name: "Алматинский Технологический Университет", addr: { ru: "Алматы, ул. Алматы, 100", en: "Almaty, Almaty St, 100", kz: "Алматы, Алматы көш., 100" }, spec: { ru: "4 лифт · 1000 кг · 1.5 м/с · 2016", en: "4 lifts · 1000 kg · 1.5 m/s · 2016", kz: "4 лифт · 1000 кг · 1.5 м/с · 2016" } },
-  { name: "ЖК Arbat", addr: { ru: "Алматы, пр. Жибек Жолы, 110", en: "Almaty, Zhibek Zholy Ave, 110", kz: "Алматы, Жібек Жолы д-лы, 110" }, spec: { ru: "16 лифт · 1000 кг · 1.5 м/с · 2018", en: "16 lifts · 1000 kg · 1.5 m/s · 2018", kz: "16 лифт · 1000 кг · 1.5 м/с · 2018" } },
-  { name: "ТРЦ MEGA Alma-Ata", addr: { ru: "Алматы, ул. Розыбакиева, 247а", en: "Almaty, Rozybakiev St, 247a", kz: "Алматы, Розыбақиев көш., 247а" }, spec: { ru: "2 эскалатор · 30° · 1000 мм · 2021", en: "2 escalators · 30° · 1000 mm · 2021", kz: "2 эскалатор · 30° · 1000 мм · 2021" } },
-  { name: "ЖК «Золото Москвы»", addr: { ru: "Астана, Festival Avenue, Достык 4", en: "Astana, Festival Avenue, Dostyk 4", kz: "Астана, Festival Avenue, Достық 4" }, spec: { ru: "1 лифт · 1000 кг · 1.0 м/с", en: "1 lift · 1000 kg · 1.0 m/s", kz: "1 лифт · 1000 кг · 1.0 м/с" } },
-  { name: "ЖК БАЙТАС", addr: { ru: "г. Кокшетау", en: "Kokshetau", kz: "Көкшетау қ." }, spec: { ru: "3 лифт · 1000 кг · 1.0 м/с · 2020", en: "3 lifts · 1000 kg · 1.0 m/s · 2020", kz: "3 лифт · 1000 кг · 1.0 м/с · 2020" } },
-  { name: "ЖК АК ЖАЙЫК", addr: { ru: "Актау, 17-й мкр., 18/3", en: "Aktau, 17th district, 18/3", kz: "Ақтау, 17-ші ш/а, 18/3" }, spec: { ru: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019", en: "4 lifts · 11–12 fl. · 1000 kg · 1.0 m/s · 2019", kz: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019" } },
-  { name: "ЖК Twin Towers", addr: { ru: "Актау, мкр. 5А, уч.4", en: "Aktau, district 5A, plot 4", kz: "Ақтау, 5А ш/а, уч.4" }, spec: { ru: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019", en: "4 lifts · 11–12 fl. · 1000 kg · 1.0 m/s · 2019", kz: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019" } },
+  {
+    name: { ru: "SEVEN HILLS", en: "SEVEN HILLS", kz: "SEVEN HILLS" },
+    addr: { ru: "Алматы, пр. Гагарина, 277/7", en: "Almaty, Gagarin Ave, 277/7", kz: "Алматы, Гагарин д-лы, 277/7" },
+    spec: { ru: "16 лифт · 16–18 қаб. · 1000 кг · 1.5 м/с · 2019", en: "16 lifts · 16–18 fl. · 1000 kg · 1.5 m/s · 2019", kz: "16 лифт · 16–18 қаб. · 1000 кг · 1.5 м/с · 2019" },
+  },
+  {
+    name: { ru: "Алматинский Технологический Университет", en: "Almaty Technological University", kz: "Алматы Технологиялық Университеті" },
+    addr: { ru: "Алматы, ул. Алматы, 100", en: "Almaty, Almaty St, 100", kz: "Алматы, Алматы көш., 100" },
+    spec: { ru: "4 лифт · 1000 кг · 1.5 м/с · 2016", en: "4 lifts · 1000 kg · 1.5 m/s · 2016", kz: "4 лифт · 1000 кг · 1.5 м/с · 2016" },
+  },
+  {
+    name: { ru: "ЖК Arbat", en: "Arbat Residential Complex", kz: "Arbat тұрғын үй кешені" },
+    addr: { ru: "Алматы, пр. Жибек Жолы, 110", en: "Almaty, Zhibek Zholy Ave, 110", kz: "Алматы, Жібек Жолы д-лы, 110" },
+    spec: { ru: "16 лифт · 1000 кг · 1.5 м/с · 2018", en: "16 lifts · 1000 kg · 1.5 m/s · 2018", kz: "16 лифт · 1000 кг · 1.5 м/с · 2018" },
+  },
+  {
+    name: { ru: "ТРЦ MEGA Alma-Ata", en: "MEGA Alma-Ata Mall", kz: "MEGA Alma-Ata СОО" },
+    addr: { ru: "Алматы, ул. Розыбакиева, 247а", en: "Almaty, Rozybakiev St, 247a", kz: "Алматы, Розыбақиев көш., 247а" },
+    spec: { ru: "2 эскалатор · 30° · 1000 мм · 2021", en: "2 escalators · 30° · 1000 mm · 2021", kz: "2 эскалатор · 30° · 1000 мм · 2021" },
+  },
+  {
+    name: { ru: "ЖК «Золото Москвы»", en: "Zoloto Moskvy Residential Complex", kz: "«Мәскеу алтыны» тұрғын үй кешені" },
+    addr: { ru: "Астана, Festival Avenue, Достык 4", en: "Astana, Festival Avenue, Dostyk 4", kz: "Астана, Festival Avenue, Достық 4" },
+    spec: { ru: "1 лифт · 1000 кг · 1.0 м/с", en: "1 lift · 1000 kg · 1.0 m/s", kz: "1 лифт · 1000 кг · 1.0 м/с" },
+  },
+  {
+    name: { ru: "ЖК БАЙТАС", en: "BAYTAS Residential Complex", kz: "БАЙТАС тұрғын үй кешені" },
+    addr: { ru: "г. Кокшетау", en: "Kokshetau", kz: "Көкшетау қ." },
+    spec: { ru: "3 лифт · 1000 кг · 1.0 м/с · 2020", en: "3 lifts · 1000 kg · 1.0 m/s · 2020", kz: "3 лифт · 1000 кг · 1.0 м/с · 2020" },
+  },
+  {
+    name: { ru: "ЖК АК ЖАЙЫК", en: "AK ZHAIYК Residential Complex", kz: "АК ЖАЙЫҚ тұрғын үй кешені" },
+    addr: { ru: "Актау, 17-й мкр., 18/3", en: "Aktau, 17th district, 18/3", kz: "Ақтау, 17-ші ш/а, 18/3" },
+    spec: { ru: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019", en: "4 lifts · 11–12 fl. · 1000 kg · 1.0 m/s · 2019", kz: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019" },
+  },
+  {
+    name: { ru: "ЖК Twin Towers", en: "Twin Towers Residential Complex", kz: "Twin Towers тұрғын үй кешені" },
+    addr: { ru: "Актау, мкр. 5А, уч.4", en: "Aktau, district 5A, plot 4", kz: "Ақтау, 5А ш/а, уч.4" },
+    spec: { ru: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019", en: "4 lifts · 11–12 fl. · 1000 kg · 1.0 m/s · 2019", kz: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019" },
+  },
 ];
 
 export function Projects() {
@@ -37,13 +91,6 @@ export function Projects() {
     { name: "Esentai Mall, Алматы", descKey: 'pr3d' as const, image: "https://www.studiofractal.co.uk/uploads/Esentai_Mall_Photography_6.jpg?v=1629468712", size: "small" },
     { name: "Хан Шатыр, Астана", descKey: 'pr4d' as const, image: "https://content.fosterandpartners.com/api/media/getCroppedImage?imagePath=/media/hy3ccvnr/hero_1438_fp405466.jpg&width=1200&height=630&crop=true", size: "medium" },
     { name: "Hilton Astana", descKey: 'pr5d' as const, image: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://media.iceportal.com/93129/photos/74155907_XL/Hilton-Astana-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto", size: "medium" },
-  ];
-
-  const intlProjects = [
-    { name: "Башня Демидов, Екатеринбург", specKey: 'is1' as const },
-    { name: "Завод СИБУР, Тобольск", specKey: 'is2' as const },
-    { name: "Ямал СПГ, полуостров Сабета", specKey: 'is3' as const },
-    { name: "ТРЦ «Пассаж» и «Радуга», Екатеринбург", specKey: 'is4' as const },
   ];
 
   return (
@@ -108,8 +155,8 @@ export function Projects() {
             <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
               {intlProjects.map((p, i) => (
                 <div key={i} className="flex flex-col border-l-2 border-primary/30 pl-4 py-1 hover:border-primary transition-colors">
-                  <span className="text-white font-medium text-lg">{p.name}</span>
-                  <span className="text-white/50 text-sm">{t('projects', p.specKey)}</span>
+                  <span className="text-white font-medium text-lg">{p.name[lang]}</span>
+                  <span className="text-white/50 text-sm">{p.spec[lang]}</span>
                 </div>
               ))}
             </div>
@@ -128,7 +175,7 @@ export function Projects() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {koyoProjects.map((p, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="bg-white/5 rounded-xl p-5 border border-white/10 hover:border-primary/40 transition-colors">
-                  <h5 className="text-white font-serif text-lg mb-1">{p.name}</h5>
+                  <h5 className="text-white font-serif text-lg mb-1">{p.name[lang]}</h5>
                   <p className="text-white/50 text-xs mb-3">{p.addr[lang]}</p>
                   <p className="text-primary text-xs font-medium">{p.spec[lang]}</p>
                 </motion.div>
