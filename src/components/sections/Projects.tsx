@@ -3,40 +3,48 @@ import { motion } from 'framer-motion';
 import almatyAirportImg from '@assets/26-10_1784823724612.webp';
 import { useLang } from '@/contexts/LanguageContext';
 
-const projects = [
-  { name: "ЭКСПО 2017, Астана (Сфера)", desc: "Самые большие стеклянные кабины лифтов в мире — 6 м в высоту. Монтаж во всех павильонах и Конгресс-центре.", image: "https://images.adsttc.com/media/images/59d7/fd94/b22e/3805/3400/00c8/large_jpg/open-uri20171006-19266-1xil78x.jpg?1507327373", size: "large" },
-  { name: "Аэропорт Алматы", desc: "Полный комплекс оборудования в новом и старом терминалах — лифты и эскалаторы.", image: almatyAirportImg, size: "small" },
-  { name: "Esentai Mall, Алматы", desc: "Премиальная вертикальная транспортировка в элитном торговом центре класса люкс.", image: "https://www.studiofractal.co.uk/uploads/Esentai_Mall_Photography_6.jpg?v=1629468712", size: "small" },
-  { name: "Хан Шатыр, Астана", desc: "Уникальный шатровый развлекательный центр — лифты и эскалаторы TKE.", image: "https://content.fosterandpartners.com/api/media/getCroppedImage?imagePath=/media/hy3ccvnr/hero_1438_fp405466.jpg&width=1200&height=630&crop=true", size: "medium" },
-  { name: "Hilton Astana", desc: "Флагманский отель международного класса — лифтовое оборудование мирового уровня.", image: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://media.iceportal.com/93129/photos/74155907_XL/Hilton-Astana-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto", size: "medium" },
-];
-
 const additionalProjects = [
-  "MEGA Alma-Ata — все лифты и эскалаторы", "MEGA Park, Алматы", "St. Regis Astana",
-  "Ramada Almaty", "Sheraton Актобе", "Apple Tower, Алматы", "ТРЦ Март, Тараз",
-  "Ibis Актобе", "Гостиница «Алма-Ата», Алматы", "Гостиница «Алма», Алматы", "Жилые комплексы по всему Казахстану",
-];
-
-const intlProjects = [
-  { name: "Башня Демидов, Екатеринбург", spec: "10 скоростных лифтов 4 м/с" },
-  { name: "Завод СИБУР, Тобольск", spec: "5-тонные промышленные лифты, экстремальная среда" },
-  { name: "Ямал СПГ, полуостров Сабета", spec: "Арктический проект, доступный только ледоколом" },
-  { name: "ТРЦ «Пассаж» и «Радуга», Екатеринбург", spec: "Лифтовые системы для крупных ТРЦ" },
+  { ru: "MEGA Alma-Ata — все лифты и эскалаторы", en: "MEGA Alma-Ata — all lifts & escalators", kz: "MEGA Alma-Ata — барлық лифтілер мен эскалаторлар" },
+  { ru: "MEGA Park, Алматы", en: "MEGA Park, Almaty", kz: "MEGA Park, Алматы" },
+  { ru: "St. Regis Astana", en: "St. Regis Astana", kz: "St. Regis Astana" },
+  { ru: "Ramada Almaty", en: "Ramada Almaty", kz: "Ramada Almaty" },
+  { ru: "Sheraton Актобе", en: "Sheraton Aktobe", kz: "Sheraton Ақтөбе" },
+  { ru: "Apple Tower, Алматы", en: "Apple Tower, Almaty", kz: "Apple Tower, Алматы" },
+  { ru: "ТРЦ Март, Тараз", en: "Mart Mall, Taraz", kz: "Март СОО, Тараз" },
+  { ru: "Ibis Актобе", en: "Ibis Aktobe", kz: "Ibis Ақтөбе" },
+  { ru: "Гостиница «Алма-Ата», Алматы", en: "Alma-Ata Hotel, Almaty", kz: "«Алма-Ата» қонақ үйі, Алматы" },
+  { ru: "Гостиница «Алма», Алматы", en: "Alma Hotel, Almaty", kz: "«Алма» қонақ үйі, Алматы" },
+  { ru: "Жилые комплексы по всему Казахстану", en: "Residential complexes across Kazakhstan", kz: "Қазақстан бойынша тұрғын үй кешендері" },
 ];
 
 const koyoProjects = [
-  { name: "SEVEN HILLS", addr: "Алматы, пр. Гагарина, 277/7", spec: "16 лифтов · 16–18 эт. · 1000 кг · 1.5 м/с · 2019" },
-  { name: "Алматинский Технологический Университет", addr: "Алматы, ул. Алматы, 100", spec: "4 лифта · 1000 кг · 1.5 м/с · 2016" },
-  { name: "ЖК Arbat", addr: "Алматы, пр. Жибек Жолы, 110", spec: "16 лифтов · 1000 кг · 1.5 м/с · 2018" },
-  { name: "ТРЦ MEGA Alma-Ata", addr: "Алматы, ул. Розыбакиева, 247а", spec: "2 эскалатора · 30° · 1000 мм · 2021" },
-  { name: "ЖК «Золото Москвы»", addr: "Астана, Festival Avenue, Достык 4", spec: "1 лифт · 1000 кг · 1.0 м/с" },
-  { name: "ЖК БАЙТАС", addr: "г. Кокшетау", spec: "3 лифта · 1000 кг · 1.0 м/с · 2020" },
-  { name: "ЖК АК ЖАЙЫК", addr: "Актау, 17-й мкр., 18/3", spec: "4 лифта · 11–12 эт. · 1000 кг · 1.0 м/с · 2019" },
-  { name: "ЖК Twin Towers", addr: "Актау, мкр. 5А, уч.4", spec: "4 лифта · 11–12 эт. · 1000 кг · 1.0 м/с · 2019" },
+  { name: "SEVEN HILLS", addr: { ru: "Алматы, пр. Гагарина, 277/7", en: "Almaty, Gagarin Ave, 277/7", kz: "Алматы, Гагарин д-лы, 277/7" }, spec: { ru: "16 лифт · 16–18 қаб. · 1000 кг · 1.5 м/с · 2019", en: "16 lifts · 16–18 fl. · 1000 kg · 1.5 m/s · 2019", kz: "16 лифт · 16–18 қаб. · 1000 кг · 1.5 м/с · 2019" } },
+  { name: "Алматинский Технологический Университет", addr: { ru: "Алматы, ул. Алматы, 100", en: "Almaty, Almaty St, 100", kz: "Алматы, Алматы көш., 100" }, spec: { ru: "4 лифт · 1000 кг · 1.5 м/с · 2016", en: "4 lifts · 1000 kg · 1.5 m/s · 2016", kz: "4 лифт · 1000 кг · 1.5 м/с · 2016" } },
+  { name: "ЖК Arbat", addr: { ru: "Алматы, пр. Жибек Жолы, 110", en: "Almaty, Zhibek Zholy Ave, 110", kz: "Алматы, Жібек Жолы д-лы, 110" }, spec: { ru: "16 лифт · 1000 кг · 1.5 м/с · 2018", en: "16 lifts · 1000 kg · 1.5 m/s · 2018", kz: "16 лифт · 1000 кг · 1.5 м/с · 2018" } },
+  { name: "ТРЦ MEGA Alma-Ata", addr: { ru: "Алматы, ул. Розыбакиева, 247а", en: "Almaty, Rozybakiev St, 247a", kz: "Алматы, Розыбақиев көш., 247а" }, spec: { ru: "2 эскалатор · 30° · 1000 мм · 2021", en: "2 escalators · 30° · 1000 mm · 2021", kz: "2 эскалатор · 30° · 1000 мм · 2021" } },
+  { name: "ЖК «Золото Москвы»", addr: { ru: "Астана, Festival Avenue, Достык 4", en: "Astana, Festival Avenue, Dostyk 4", kz: "Астана, Festival Avenue, Достық 4" }, spec: { ru: "1 лифт · 1000 кг · 1.0 м/с", en: "1 lift · 1000 kg · 1.0 m/s", kz: "1 лифт · 1000 кг · 1.0 м/с" } },
+  { name: "ЖК БАЙТАС", addr: { ru: "г. Кокшетау", en: "Kokshetau", kz: "Көкшетау қ." }, spec: { ru: "3 лифт · 1000 кг · 1.0 м/с · 2020", en: "3 lifts · 1000 kg · 1.0 m/s · 2020", kz: "3 лифт · 1000 кг · 1.0 м/с · 2020" } },
+  { name: "ЖК АК ЖАЙЫК", addr: { ru: "Актау, 17-й мкр., 18/3", en: "Aktau, 17th district, 18/3", kz: "Ақтау, 17-ші ш/а, 18/3" }, spec: { ru: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019", en: "4 lifts · 11–12 fl. · 1000 kg · 1.0 m/s · 2019", kz: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019" } },
+  { name: "ЖК Twin Towers", addr: { ru: "Актау, мкр. 5А, уч.4", en: "Aktau, district 5A, plot 4", kz: "Ақтау, 5А ш/а, уч.4" }, spec: { ru: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019", en: "4 lifts · 11–12 fl. · 1000 kg · 1.0 m/s · 2019", kz: "4 лифт · 11–12 қаб. · 1000 кг · 1.0 м/с · 2019" } },
 ];
 
 export function Projects() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+
+  const projects = [
+    { name: "ЭКСПО 2017, Астана (Сфера)", descKey: 'pr1d' as const, image: "https://images.adsttc.com/media/images/59d7/fd94/b22e/3805/3400/00c8/large_jpg/open-uri20171006-19266-1xil78x.jpg?1507327373", size: "large" },
+    { name: "Аэропорт Алматы", descKey: 'pr2d' as const, image: almatyAirportImg, size: "small" },
+    { name: "Esentai Mall, Алматы", descKey: 'pr3d' as const, image: "https://www.studiofractal.co.uk/uploads/Esentai_Mall_Photography_6.jpg?v=1629468712", size: "small" },
+    { name: "Хан Шатыр, Астана", descKey: 'pr4d' as const, image: "https://content.fosterandpartners.com/api/media/getCroppedImage?imagePath=/media/hy3ccvnr/hero_1438_fp405466.jpg&width=1200&height=630&crop=true", size: "medium" },
+    { name: "Hilton Astana", descKey: 'pr5d' as const, image: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://media.iceportal.com/93129/photos/74155907_XL/Hilton-Astana-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto", size: "medium" },
+  ];
+
+  const intlProjects = [
+    { name: "Башня Демидов, Екатеринбург", specKey: 'is1' as const },
+    { name: "Завод СИБУР, Тобольск", specKey: 'is2' as const },
+    { name: "Ямал СПГ, полуостров Сабета", specKey: 'is3' as const },
+    { name: "ТРЦ «Пассаж» и «Радуга», Екатеринбург", specKey: 'is4' as const },
+  ];
 
   return (
     <section id="projects" className="py-24 bg-card/50 border-y border-white/5 relative">
@@ -47,6 +55,7 @@ export function Projects() {
           <p className="text-white/60 font-light text-lg">{t('projects', 'sub')}</p>
         </div>
 
+        {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {projects.map((project, i) => (
             <motion.div
@@ -65,19 +74,20 @@ export function Projects() {
               <img src={project.image} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                 <h4 className="text-2xl font-serif text-white mb-2">{project.name}</h4>
-                <p className="text-primary text-sm font-medium tracking-wide">{project.desc}</p>
+                <p className="text-primary text-sm font-medium tracking-wide">{t('projects', project.descKey)}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
+        {/* Additional Projects */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass rounded-2xl p-8 mb-12">
-          <h4 className="text-xl font-serif text-white mb-6 text-primary">Другие реализованные объекты в Казахстане</h4>
+          <h4 className="text-xl font-serif text-white mb-6 text-primary">{t('projects', 'otherTitle')}</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {additionalProjects.map((proj, i) => (
               <div key={i} className="flex items-center gap-2 text-sm text-white/70">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
-                <span>{proj}</span>
+                <span>{proj[lang]}</span>
               </div>
             ))}
           </div>
@@ -99,7 +109,7 @@ export function Projects() {
               {intlProjects.map((p, i) => (
                 <div key={i} className="flex flex-col border-l-2 border-primary/30 pl-4 py-1 hover:border-primary transition-colors">
                   <span className="text-white font-medium text-lg">{p.name}</span>
-                  <span className="text-white/50 text-sm">{p.spec}</span>
+                  <span className="text-white/50 text-sm">{t('projects', p.specKey)}</span>
                 </div>
               ))}
             </div>
@@ -119,8 +129,8 @@ export function Projects() {
               {koyoProjects.map((p, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }} className="bg-white/5 rounded-xl p-5 border border-white/10 hover:border-primary/40 transition-colors">
                   <h5 className="text-white font-serif text-lg mb-1">{p.name}</h5>
-                  <p className="text-white/50 text-xs mb-3">{p.addr}</p>
-                  <p className="text-primary text-xs font-medium">{p.spec}</p>
+                  <p className="text-white/50 text-xs mb-3">{p.addr[lang]}</p>
+                  <p className="text-primary text-xs font-medium">{p.spec[lang]}</p>
                 </motion.div>
               ))}
             </div>
