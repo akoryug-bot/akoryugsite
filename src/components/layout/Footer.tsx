@@ -86,7 +86,7 @@ export function Footer() {
               <p>Понедельник – Пятница</p>
               <p className="text-white font-medium">9:00 – 18:00 (UTC+5)</p>
               <p className="mt-4 pt-4 border-t border-white/10">Выходные дни</p>
-              <p>Выходной</p>
+              <p>Суббота, Воскресенье</p>
             </div>
             <div className="mt-6 pt-6 border-t border-white/10">
               <a
