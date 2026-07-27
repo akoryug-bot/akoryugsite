@@ -13,8 +13,8 @@ export const translations = {
   hero: {
     badge:   { ru: 'Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) в Казахстане', en: 'Official Distributor of TK Elevator (thyssenkrupp Elevator) in Kazakhstan', kz: 'Қазақстандағы TK Elevator (thyssenkrupp Elevator) ресми дистрибьюторы' },
     title1:  { ru: 'АКОР ЮГ — ', en: 'AKOR YUG — ', kz: 'АКОР ЮГ — ' },
-    title2:  { ru: 'поставщик', en: 'supplier', kz: 'жеткізуші' },
-    title3:  { ru: 'лифтового оборудования', en: 'of elevator equipment', kz: 'лифт жабдықтарының' },
+    title2:  { ru: 'поставщик', en: 'supplier', kz: 'Лифт жабдықтарын' },
+    title3:  { ru: 'лифтового оборудования', en: 'of elevator equipment', kz: 'жеткізуші' },
     sub:     { ru: 'Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) и партнёр KOYO в Республике Казахстан. Поставка лифтов, эскалаторов и траволаторов по всему Казахстану.', en: 'Official distributor of TK Elevator (thyssenkrupp Elevator) and KOYO partner in the Republic of Kazakhstan. Supply of elevators, escalators and travelators throughout Kazakhstan.', kz: 'Қазақстан Республикасындағы TK Elevator (thyssenkrupp Elevator) ресми дистрибьюторы және KOYO серіктесі. Бүкіл Қазақстан бойынша лифт, эскалатор және траволаторлар жеткізу.' },
     btn1:    { ru: 'Наши проекты', en: 'Our Projects', kz: 'Біздің жобалар' },
     btn2:    { ru: 'Запросить предложение', en: 'Request a Quote', kz: 'Ұсыныс алу' },
