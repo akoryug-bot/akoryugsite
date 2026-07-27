@@ -11,12 +11,7 @@ export function Partners() {
       name: "TK Elevator (thyssenkrupp Elevator)",
       roleKey: 'tkeRole' as const,
       descKey: 'tkeDesc' as const,
-      stats: [
-        "16 производственных предприятий",
-        "Присутствие в 100+ странах",
-        "~1000 сервисных точек",
-        "Испытательные башни выше 100 м",
-      ],
+      statsKeys: ['tke_s1', 'tke_s2', 'tke_s3', 'tke_s4'] as const,
       features: [
         { icon: <Globe className="w-4 h-4" />, textKey: 'top4' as const },
         { icon: <Settings className="w-4 h-4" />, textKey: 'german' as const },
@@ -28,12 +23,7 @@ export function Partners() {
       name: "KOYO Elevator",
       roleKey: 'koyoRole' as const,
       descKey: 'koyoDesc' as const,
-      stats: [
-        "Макс. скорость: 8 м/с",
-        "Эскалаторы до 25 м высотой",
-        "Траволаторы до 200 м длиной",
-        "Сертификаты ISO, TUV, EAC",
-      ],
+      statsKeys: ['koyo_s1', 'koyo_s2', 'koyo_s3', 'koyo_s4'] as const,
       features: [
         { icon: <TrendingUp className="w-4 h-4" />, textKey: 'factory' as const },
         { icon: <ShieldCheck className="w-4 h-4" />, textKey: 'premium' as const },
@@ -82,10 +72,10 @@ export function Partners() {
                 <p className="text-white/70 mb-6 font-light leading-relaxed">{t('partners', partner.descKey)}</p>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  {partner.stats.map((stat, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-white/80">
+                  {partner.statsKeys.map((key) => (
+                    <div key={key} className="flex items-center gap-2 text-sm text-white/80">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0" />
-                      <span>{stat}</span>
+                      <span>{t('partners', key)}</span>
                     </div>
                   ))}
                 </div>
