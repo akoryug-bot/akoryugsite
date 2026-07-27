@@ -51,7 +51,7 @@ export function Navbar() {
           <div className="h-8 w-px bg-white/20" />
           <img src={tkeLogoSrc} alt="TK Elevator (thyssenkrupp Elevator) Authorized Distributor" className="h-12 w-auto rounded object-contain bg-white p-1" />
           <div className="h-8 w-px bg-white/20" />
-          <img src={koyoLogoSrc} alt="KOYO Elevator" className="h-10 w-auto rounded object-contain bg-[#1a1a1a] px-2 py-1" />
+          <img src={koyoLogoSrc} alt="KOYO Elevator" className="h-7 w-auto rounded object-contain bg-[#1a1a1a] px-2 py-1" />
         </a>
 
         {/* Desktop Nav */}
