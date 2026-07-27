@@ -157,7 +157,7 @@ export function Catalog() {
         {/* TKE Products */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {tkeProducts.map((p, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }} className="glass rounded-2xl p-7 flex flex-col gap-5 border border-white/10 hover:border-primary/40 transition-colors group">
+            <motion.div key={`tke-${i}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }} className="glass rounded-2xl p-7 flex flex-col gap-5 border border-white/10 hover:border-primary/40 transition-colors group">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider border mb-3 ${p.tagColor}`}>{p.tag[lang]}</span>
@@ -189,7 +189,7 @@ export function Catalog() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {koyoProducts.map((p, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="glass rounded-2xl p-7 flex flex-col gap-5 border border-white/10 hover:border-blue-400/40 transition-colors group">
+              <motion.div key={`koyo-${i}`} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="glass rounded-2xl p-7 flex flex-col gap-5 border border-white/10 hover:border-blue-400/40 transition-colors group">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider border mb-3 ${p.tagColor}`}>{p.tag[lang]}</span>
