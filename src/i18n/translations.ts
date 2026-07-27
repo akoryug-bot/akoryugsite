@@ -18,7 +18,6 @@ export const translations = {
     sub:     { ru: 'Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) и партнёр KOYO в Республике Казахстан. Поставка лифтов, эскалаторов и траволаторов по всему Казахстану.', en: 'Official distributor of TK Elevator (thyssenkrupp Elevator) and KOYO partner in the Republic of Kazakhstan. Supply of elevators, escalators and travelators throughout Kazakhstan.', kz: 'Қазақстан Республикасындағы TK Elevator (thyssenkrupp Elevator) ресми дистрибьюторы және KOYO серіктесі. Бүкіл Қазақстан бойынша лифт, эскалатор және траволаторлар жеткізу.' },
     btn1:    { ru: 'Наши проекты', en: 'Our Projects', kz: 'Біздің жобалар' },
     btn2:    { ru: 'Запросить предложение', en: 'Request a Quote', kz: 'Ұсыныс алу' },
-    tagline: { ru: 'Поставщик лифтового оборудования, эскалаторов и запасных частей к ним.', en: 'Supplier of elevator equipment, escalators and spare parts.', kz: 'Лифт жабдықтары, эскалаторлар және оларға арналған қосалқы бөлшектерді жеткізуші.' },
     scroll:  { ru: 'Прокрутите', en: 'Scroll', kz: 'Айналдыру' },
   },
   about: {
