@@ -106,7 +106,7 @@ export function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {projects.map((project, i) => (
             <motion.div
-              key={project.name}
+              key={`proj-${i}`}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
