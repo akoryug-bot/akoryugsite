@@ -4,7 +4,7 @@ import { Shield, Cog, Truck, Handshake, BadgeCheck, Users, Wrench, FileSearch } 
 
 const advantages = [
   { icon: Users, title: "Профессиональная команда", desc: "Опытные инженеры с глубокой специализацией в лифтовом оборудовании." },
-  { icon: BadgeCheck, title: "Официальный партнёр", desc: "Прямое международное представительство TKE и KOYO." },
+  { icon: BadgeCheck, title: "Официальный дистрибьютор", desc: "Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) и партнёр KOYO." },
   { icon: Cog, title: "Немецкие технологии", desc: "Высочайшая точность и долговечность немецкого машиностроения." },
   { icon: Shield, title: "Надёжные бренды", desc: "TKE и KOYO — глобально проверенные системы в 100+ странах." },
   { icon: FileSearch, title: "Индивидуальные решения", desc: "Инжиниринг под уникальную архитектуру каждого объекта." },

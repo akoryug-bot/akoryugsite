@@ -153,7 +153,7 @@ export function Projects() {
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-2">
               <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">KOYO Elevator</span>
-              <span className="text-white/40 text-sm">Эксклюзивный представитель в Казахстане</span>
+              <span className="text-white/40 text-sm">Партнёр в Казахстане</span>
             </div>
             <h3 className="text-3xl font-serif text-white mb-8">Реализованные проекты KOYO</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
