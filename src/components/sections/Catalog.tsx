@@ -37,11 +37,11 @@ const products = [
   },
   {
     model: "TUGELA",
-    category: "Грузовой / сервисный лифт",
-    description: "Мощный грузовой лифт для промышленных объектов, складов и производственных предприятий. Высокая грузоподъёмность, усиленная конструкция кабины и порогов.",
-    specs: ["Грузоподъёмность: до 5000 кг", "Скорость: 0.25–1.0 м/с", "Размер кабины: по требованию", "Защита IP65 по запросу"],
+    category: "Эскалатор",
+    description: "Высоконадёжный эскалатор для торговых центров, транспортных узлов и промышленных объектов. Усиленная конструкция ступеней и поручней, высокая интенсивность эксплуатации.",
+    specs: ["Угол наклона: 30° или 35°", "Ширина: 600, 800, 1000 мм", "Высота: до 25 м", "Защита IP65 по запросу"],
     file: "TKE_TUGELA.pdf",
-    tag: "Промышленный",
+    tag: "Эскалатор",
   },
   {
     model: "VELINO",
@@ -78,13 +78,13 @@ export function Catalog() {
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">TK Elevator</span>
+              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">TK Elevator (thyssenkrupp Elevator)</span>
               <span className="text-white/40 text-sm">Официальный авторизованный дистрибьютор</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-serif text-white">Каталог оборудования</h2>
           </div>
           <p className="text-white/50 font-light max-w-sm text-right">
-            Скачайте технические брошюры по каждому продукту TK Elevator
+            Скачайте технические брошюры по каждому продукту TK Elevator (thyssenkrupp Elevator)
           </p>
         </motion.div>
 
@@ -141,6 +141,7 @@ export function Catalog() {
             </motion.div>
           ))}
         </div>
+
         {/* KOYO Catalog Block */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -150,7 +151,7 @@ export function Catalog() {
         >
           <div className="flex items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-semibold uppercase tracking-wider">KOYO Elevator</span>
-            <span className="text-white/40 text-sm">Эксклюзивный представитель в Казахстане</span>
+            <span className="text-white/40 text-sm">Партнёр в Казахстане</span>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -164,12 +165,12 @@ export function Catalog() {
                 tag: "Лифты",
               },
               {
-                model: "Лифты KOYO — KOE серия",
-                category: "Специализированная серия лифтов",
-                description: "Серия KOE — высокоэффективные лифты с частотным приводом и энергосберегающими технологиями. Подходит для жилых комплексов, офисных и торговых зданий.",
-                specs: ["Частотный привод VVVF", "Точность остановки ±1 мм", "Энергосбережение класса A", "Тихий ход — менее 55 дБ"],
+                model: "Варианты дизайнов лифтов KOYO и комплектующие",
+                category: "Дизайн кабин, отделка и комплектующие",
+                description: "Широкий выбор вариантов дизайна кабин: отделка стен, полов, потолков, панели управления, освещение и поручни. Каталог комплектующих для индивидуальной компоновки лифтов KOYO.",
+                specs: ["Варианты отделки: нержавеющая сталь, стекло, дерево", "Широкий выбор панелей управления", "Разные типы дверей и порогов", "Аксессуары и элементы безопасности"],
                 file: "KOYO_Lifts_KOE.pdf",
-                tag: "Лифты",
+                tag: "Дизайн",
               },
             ].map((p, i) => (
               <motion.div

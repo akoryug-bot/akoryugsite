@@ -63,7 +63,7 @@ export function Projects() {
 
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h3 className="text-4xl md:text-5xl font-serif text-white mb-6">Объекты представляемых брендов в Казахстане</h3>
-          <p className="text-white/60 font-light text-lg">Наше оборудование TK Elevator и KOYO обслуживает миллионы людей в самых значимых архитектурных объектах страны.</p>
+          <p className="text-white/60 font-light text-lg">Наше оборудование TK Elevator (thyssenkrupp Elevator) и KOYO обслуживает множество людей в самых значимых архитектурных объектах страны.</p>
         </div>
 
         {/* Main Grid */}

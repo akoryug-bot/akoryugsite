@@ -35,7 +35,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm font-medium tracking-wider text-white/90 uppercase">Официальный партнёр TK Elevator в Казахстане</span>
+          <span className="text-sm font-medium tracking-wider text-white/90 uppercase">Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) в Казахстане</span>
         </motion.div>
 
         <motion.h1
@@ -54,7 +54,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed"
         >
-          Официальный партнёр TK Elevator и представитель KOYO в Республике Казахстан.
+          Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) и партнёр KOYO в Республике Казахстан.
           Поставка лифтов, эскалаторов и траволаторов по всему Казахстану.
         </motion.p>
 

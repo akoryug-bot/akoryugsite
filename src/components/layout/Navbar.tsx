@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
 import logoSrc from '@assets/логотип_1784805497394.jpg';
 import tkeLogoSrc from '@assets/tke_dis_logo_portrait_rgb_gradient_1784884264240.jpg';
+import koyoLogoSrc from '@assets/Рисунок1_коуо_лого_1785152814806.png';
 
 const navLinks = [
   { name: 'О компании', href: '#about' },
@@ -44,11 +45,13 @@ export function Navbar() {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="flex items-center gap-4"
+          className="flex items-center gap-3"
         >
           <img src={logoSrc} alt="АКОР ЮГ" className="h-12 w-auto rounded object-contain bg-white/10" />
           <div className="h-8 w-px bg-white/20" />
-          <img src={tkeLogoSrc} alt="Authorized Distributor TKE" className="h-12 w-auto rounded object-contain bg-white p-1" />
+          <img src={tkeLogoSrc} alt="TK Elevator (thyssenkrupp Elevator) Authorized Distributor" className="h-12 w-auto rounded object-contain bg-white p-1" />
+          <div className="h-8 w-px bg-white/20" />
+          <img src={koyoLogoSrc} alt="KOYO Elevator" className="h-10 w-auto rounded object-contain bg-[#1a1a1a] px-2 py-1" />
         </a>
 
         {/* Desktop Nav */}
