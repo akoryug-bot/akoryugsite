@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import heroBg from '@assets/ChatGPT_Image_23_июл._2026_г.,_21_21_38_1784823714036.png';
+import { useLang } from '@/contexts/LanguageContext';
 
 export function Hero() {
+  const { t } = useLang();
+
   const scrollTo = (href: string) => {
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B1622]/70 via-[#0B1622]/50 to-[#0B1622] z-10" />
         <motion.img
@@ -22,7 +22,7 @@ export function Hero() {
           animate={{ scale: 1 }}
           transition={{ duration: 20, ease: 'easeOut' }}
           src={heroBg}
-          alt="Лифты и эскалаторы — лобби современного бизнес-центра"
+          alt="Лифты и эскалаторы"
           className="w-full h-full object-cover"
         />
       </div>
@@ -35,7 +35,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm font-medium tracking-wider text-white/90 uppercase">Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) в Казахстане</span>
+          <span className="text-sm font-medium tracking-wider text-white/90 uppercase">{t('hero', 'badge')}</span>
         </motion.div>
 
         <motion.h1
@@ -44,8 +44,8 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight leading-tight"
         >
-          АКОР ЮГ — <span className="text-primary">поставщик</span>
-          <br />лифтового оборудования
+          {t('hero', 'title1')}<span className="text-primary">{t('hero', 'title2')}</span>
+          <br />{t('hero', 'title3')}
         </motion.h1>
 
         <motion.p
@@ -54,8 +54,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed"
         >
-          Официальный дистрибьютор TK Elevator (thyssenkrupp Elevator) и партнёр KOYO в Республике Казахстан.
-          Поставка лифтов, эскалаторов и траволаторов по всему Казахстану.
+          {t('hero', 'sub')}
         </motion.p>
 
         <motion.div
@@ -69,7 +68,7 @@ export function Hero() {
             className="w-full sm:w-auto text-black bg-primary hover:bg-primary/90 h-14 px-8 text-base font-semibold group"
             onClick={() => scrollTo('#projects')}
           >
-            Наши проекты
+            {t('hero', 'btn1')}
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button
@@ -78,7 +77,7 @@ export function Hero() {
             className="w-full sm:w-auto h-14 px-8 text-base font-medium"
             onClick={() => scrollTo('#contact')}
           >
-            Запросить предложение
+            {t('hero', 'btn2')}
           </Button>
         </motion.div>
       </div>
@@ -90,7 +89,7 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/50 cursor-pointer hover:text-white transition-colors"
         onClick={() => scrollTo('#about')}
       >
-        <span className="text-xs tracking-widest uppercase">Прокрутите</span>
+        <span className="text-xs tracking-widest uppercase">{t('hero', 'scroll')}</span>
         <ChevronDown className="w-4 h-4 animate-bounce" />
       </motion.div>
     </section>
