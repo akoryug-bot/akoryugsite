@@ -42,11 +42,20 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight leading-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-4 tracking-tight leading-tight"
         >
           {t('hero', 'title1')}<span className="text-primary">{t('hero', 'title2')}</span>
           <br />{t('hero', 'title3')}
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.55 }}
+          className="text-base md:text-lg text-white/50 font-light tracking-wide mb-8"
+        >
+          {t('hero', 'tagline')}
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
