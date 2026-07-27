@@ -42,7 +42,7 @@ export function Contact() {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-white font-serif text-lg mb-1">Головной офис</h4>
+                  <h4 className="text-white font-serif text-lg mb-1">Наш адрес</h4>
                   <p className="text-white/60 font-light">ул. Карбышева 12/7<br />Костанай 110000, Республика Казахстан</p>
                 </div>
               </div>
