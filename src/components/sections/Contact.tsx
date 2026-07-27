@@ -37,7 +37,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-serif text-lg mb-1">{t('contact', 'address')}</h4>
-                  <p className="text-white/60 font-light">ул. Карбышева 12/7<br />Костанай 110000, Республика Казахстан</p>
+                  <p className="text-white/60 font-light">{t('address', 'street')}<br />{t('address', 'city')} 110000, {t('address', 'country')}</p>
                 </div>
               </div>
 

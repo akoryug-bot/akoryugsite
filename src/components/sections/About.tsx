@@ -53,8 +53,8 @@ export function About() {
                 <p className="text-white/60 text-sm">150840003875</p>
               </div>
               <div>
-                <p className="text-2xl font-serif text-primary mb-1">Казахстан</p>
-                <p className="text-white/60 text-sm">Костанай, ул. Карбышева 12/7</p>
+                <p className="text-2xl font-serif text-primary mb-1">{t('address', 'country')}</p>
+                <p className="text-white/60 text-sm">{t('address', 'city')}, {t('address', 'street')}</p>
               </div>
             </div>
           </motion.div>

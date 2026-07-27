@@ -86,6 +86,14 @@ export const translations = {
     koyo_s3:{ ru: 'Траволаторы до 200 м длиной', en: 'Travelators up to 200 m', kz: 'Ұзындығы 200 м дейінгі траволаторлар' },
     koyo_s4:{ ru: 'Сертификаты ISO, TUV, EAC', en: 'ISO, TUV, EAC certified', kz: 'ISO, TUV, EAC сертификаттары' },
   },
+  address: {
+    country: { ru: 'Казахстан', en: 'Kazakhstan', kz: 'Қазақстан' },
+    city:    { ru: 'Костанай', en: 'Kostanay', kz: 'Қостанай' },
+    street:  { ru: 'ул. Карбышева 12/7', en: '12/7 Karbышeva St.', kz: 'Карбышев көш. 12/7' },
+    full:    { ru: 'Костанай, ул. Карбышева 12/7', en: '12/7 Karbышeva St., Kostanay', kz: 'Қостанай, Карбышев көш. 12/7' },
+    full2:   { ru: 'Костанай, ул. Карбышева 12/7\nКазахстан, 110000', en: '12/7 Karbышeva St., Kostanay\nKazakhstan, 110000', kz: 'Қостанай, Карбышев көш. 12/7\nҚазақстан, 110000' },
+    zip:     { ru: 'Казахстан, 110000', en: 'Kazakhstan, 110000', kz: 'Қазақстан, 110000' },
+  },
   process: {
     label:   { ru: 'Как мы работаем', en: 'How We Work', kz: 'Біз қалай жұмыс істейміз' },
     title:   { ru: 'Наша методология', en: 'Our Methodology', kz: 'Біздің әдіснамамыз' },
