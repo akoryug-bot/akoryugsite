@@ -86,11 +86,11 @@ export function Projects() {
   const { t, lang } = useLang();
 
   const projects = [
-    { name: "ЭКСПО 2017, Астана (Сфера)", descKey: 'pr1d' as const, image: "https://images.adsttc.com/media/images/59d7/fd94/b22e/3805/3400/00c8/large_jpg/open-uri20171006-19266-1xil78x.jpg?1507327373", size: "large" },
-    { name: "Аэропорт Алматы", descKey: 'pr2d' as const, image: almatyAirportImg, size: "small" },
-    { name: "Esentai Mall, Алматы", descKey: 'pr3d' as const, image: "https://www.studiofractal.co.uk/uploads/Esentai_Mall_Photography_6.jpg?v=1629468712", size: "small" },
-    { name: "Хан Шатыр, Астана", descKey: 'pr4d' as const, image: "https://content.fosterandpartners.com/api/media/getCroppedImage?imagePath=/media/hy3ccvnr/hero_1438_fp405466.jpg&width=1200&height=630&crop=true", size: "medium" },
-    { name: "Hilton Astana", descKey: 'pr5d' as const, image: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://media.iceportal.com/93129/photos/74155907_XL/Hilton-Astana-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto", size: "medium" },
+    { name: { ru: "ЭКСПО 2017, Астана (Сфера)", en: "EXPO 2017, Astana (Sphere)", kz: "EXPO 2017, Астана (Сфера)" }, descKey: 'pr1d' as const, image: "https://images.adsttc.com/media/images/59d7/fd94/b22e/3805/3400/00c8/large_jpg/open-uri20171006-19266-1xil78x.jpg?1507327373", size: "large" },
+    { name: { ru: "Аэропорт Алматы", en: "Almaty Airport", kz: "Алматы әуежайы" }, descKey: 'pr2d' as const, image: almatyAirportImg, size: "small" },
+    { name: { ru: "Esentai Mall, Алматы", en: "Esentai Mall, Almaty", kz: "Esentai Mall, Алматы" }, descKey: 'pr3d' as const, image: "https://www.studiofractal.co.uk/uploads/Esentai_Mall_Photography_6.jpg?v=1629468712", size: "small" },
+    { name: { ru: "Хан Шатыр, Астана", en: "Khan Shatyr, Astana", kz: "Хан Шатыр, Астана" }, descKey: 'pr4d' as const, image: "https://content.fosterandpartners.com/api/media/getCroppedImage?imagePath=/media/hy3ccvnr/hero_1438_fp405466.jpg&width=1200&height=630&crop=true", size: "medium" },
+    { name: { ru: "Hilton Astana", en: "Hilton Astana", kz: "Hilton Astana" }, descKey: 'pr5d' as const, image: "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://media.iceportal.com/93129/photos/74155907_XL/Hilton-Astana-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto", size: "medium" },
   ];
 
   return (
@@ -120,7 +120,7 @@ export function Projects() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
               <img src={project.image} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-                <h4 className="text-2xl font-serif text-white mb-2">{project.name}</h4>
+                <h4 className="text-2xl font-serif text-white mb-2">{project.name[lang]}</h4>
                 <p className="text-primary text-sm font-medium tracking-wide">{t('projects', project.descKey)}</p>
               </div>
             </motion.div>
