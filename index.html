@@ -3,24 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <!-- ═══════════════════════════════════════════════
+         TITLE & META
+    ═══════════════════════════════════════════════ -->
     <title>АКОР ЮГ | Лифты и эскалаторы TK Elevator и KOYO</title>
     <meta name="description" content="АКОР ЮГ — официальный дистрибьютор TK Elevator и партнер KOYO. Поставка лифтов, эскалаторов и запасных частей по всему Казахстану." />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://akoryug.kz/" />
+
+    <!-- ═══════════════════════════════════════════════
+         OPEN GRAPH
+    ═══════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AKOR YUG" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="https://akoryug.kz/" />
     <meta property="og:title" content="АКОР ЮГ | Лифты и эскалаторы TK Elevator и KOYO" />
     <meta property="og:description" content="АКОР ЮГ — официальный дистрибьютор TK Elevator и партнер KOYO. Поставка лифтов, эскалаторов и запасных частей по всему Казахстану." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://akoryug.kz/" />
     <meta property="og:image" content="https://akoryug.kz/og-image.jpg" />
-    <meta property="og:site_name" content="AKOR YUG" />
-    <link rel="canonical" href="https://akoryug.kz/" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="АКОР ЮГ — поставка лифтового оборудования в Казахстане" />
+
+    <!-- ═══════════════════════════════════════════════
+         TWITTER CARD
+    ═══════════════════════════════════════════════ -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AKOR YUG | Официальный поставщик TK Elevator и KOYO в Казахстане" />
     <meta name="twitter:description" content="AKOR YUG — официальный поставщик продукции TK Elevator (ранее thyssenkrupp Elevator) и KOYO в Казахстане. Надежные решения для лифтового оборудования, эскалаторов и запасных частей." />
     <meta name="twitter:image" content="https://akoryug.kz/og-image.jpg" />
+
+    <!-- ═══════════════════════════════════════════════
+         SCHEMA.ORG JSON-LD
+    ═══════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://akoryug.kz/#organization",
+          "name": "АКОР ЮГ",
+          "alternateName": "AKOR YUG",
+          "url": "https://akoryug.kz/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://akoryug.kz/#logo",
+            "url": "https://akoryug.kz/og-image.jpg",
+            "width": 1200,
+            "height": 630,
+            "caption": "АКОР ЮГ"
+          },
+          "image": {
+            "@id": "https://akoryug.kz/#logo"
+          },
+          "description": "Поставка лифтового оборудования, эскалаторов и запасных частей в Казахстане.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Kazakhstan"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "KZ"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://akoryug.kz/#website",
+          "url": "https://akoryug.kz/",
+          "name": "АКОР ЮГ",
+          "description": "Поставка лифтового оборудования, эскалаторов и запасных частей в Казахстане.",
+          "publisher": {
+            "@id": "https://akoryug.kz/#organization"
+          },
+          "inLanguage": ["ru", "en", "kk"]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════
+         GOOGLE ANALYTICS 4
+         Вставьте ваш Measurement ID ниже (вида G-XXXXXXXXXX).
+         Раскомментируйте блок после получения ID в GA4.
+    ═══════════════════════════════════════════════ -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
+    <!-- ═══════════════════════════════════════════════
+         FAVICON & FONTS
+    ═══════════════════════════════════════════════ -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
