@@ -118,7 +118,7 @@ export function Projects() {
             >
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10" />
-              <img src={project.image} alt={project.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={project.image} alt={project.name[lang]} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
                 <h4 className="text-2xl font-serif text-white mb-2">{project.name[lang]}</h4>
                 <p className="text-primary text-sm font-medium tracking-wide">{t('projects', project.descKey)}</p>
