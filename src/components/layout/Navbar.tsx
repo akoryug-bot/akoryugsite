@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
 import logoSrc from '@assets/логотип_1784805497394.jpg';
 import tkeLogoSrc from '@assets/tke_dis_logo_portrait_rgb_gradient_1784884264240.jpg';
-import koyoLogoSrc from '@assets/Рисунок1_коуо_лого_1785152814806.png';
+import koyoLogoSrc from '@assets/OIP_1785234040029.webp';
 import { useLang } from '@/contexts/LanguageContext';
 import type { Lang } from '@/i18n/translations';
 
