@@ -3,6 +3,7 @@
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt",  "destination": "/robots.txt"  },
     { "source": "/favicon.ico", "destination": "/favicon.ico" },
+    { "source": "/og-image.jpg", "destination": "/og-image.jpg" },
     { "source": "/(.*)",        "destination": "/index.html"  }
   ]
 }
