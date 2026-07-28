@@ -37,7 +37,7 @@ const tkeProducts: Product[] = [
     description: { ru: "Надёжный лифт для жилых и коммерческих зданий средней этажности. Машинное отделение не требуется — MRL. Компактная конструкция, быстрый монтаж.", en: "Reliable lift for mid-rise residential and commercial buildings. No machine room required — MRL. Compact design, fast installation.", kz: "Орта қабатты тұрғын және коммерциялық ғимараттарға арналған сенімді лифт. Машина бөлмесі қажет емес — MRL. Ықшам конструкция, жылдам монтаж." },
     specs: [
       { ru: "Грузоподъёмность: 320–1600 кг", en: "Capacity: 320–1600 kg", kz: "Жүк көтерімділігі: 320–1600 кг" },
-      { ru: "Скорость: до 1.75 м/с", en: "Speed: up to 1.75 m/s", kz: "Жылдамдық: 1.75 м/с дейін" },
+      { ru: "Скорость: до 3 м/с", en: "Speed: up to 3 m/s", kz: "Жылдамдық: 3 м/с дейін" },
       { ru: "До 30 остановок", en: "Up to 30 stops", kz: "30 аялдамаға дейін" },
       { ru: "MRL — без машинного зала", en: "MRL — no machine room", kz: "MRL — машина бөлмесінсіз" },
     ],
