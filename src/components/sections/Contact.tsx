@@ -9,15 +9,40 @@ export function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    setError(false);
+
+    const form = e.target as HTMLFormElement;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          subject: `Новая заявка от ${data.name} — ${data.company}`,
+          from_name: 'АКОР ЮГ — сайт',
+          ...data,
+        }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSuccess(true);
+        form.reset();
+        setTimeout(() => setSuccess(false), 6000);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
       setLoading(false);
-      setSuccess(true);
-      (e.target as HTMLFormElement).reset();
-      setTimeout(() => setSuccess(false), 5000);
-    }, 1000);
+    }
   };
 
   return (
@@ -99,27 +124,30 @@ export function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs text-white/60 uppercase tracking-wider">{t('contact', 'fname')}</label>
-                  <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
+                  <input name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs text-white/60 uppercase tracking-wider">{t('contact', 'fcompany')}</label>
-                  <input required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
+                  <input name="company" required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs text-white/60 uppercase tracking-wider">{t('contact', 'fphone')}</label>
-                  <input required type="tel" placeholder="+7 (___) ___-__-__" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
+                  <input name="phone" required type="tel" placeholder="+7 (___) ___-__-__" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs text-white/60 uppercase tracking-wider">Email</label>
-                  <input required type="email" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
+                  <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary transition-colors" />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-xs text-white/60 uppercase tracking-wider">{t('contact', 'fmsg')}</label>
-                <textarea required rows={4} className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+                <textarea name="message" required rows={4} className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
               </div>
+              {error && (
+                <p className="text-red-400 text-sm text-center">Ошибка отправки. Попробуйте ещё раз или напишите на akor.yug@gmail.com</p>
+              )}
               <Button type="submit" disabled={loading} className="w-full h-14 bg-white text-black hover:bg-white/90 text-lg font-medium mt-4">
                 {loading ? t('contact', 'sending') : t('contact', 'submit')}
               </Button>
