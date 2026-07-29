@@ -42,7 +42,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 tracking-tight leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 tracking-tight leading-tight"
         >
           {t('hero', 'title1')}<span className="text-primary">{t('hero', 'title2')}</span>
           <br />{t('hero', 'title3')}
