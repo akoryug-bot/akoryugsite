@@ -1,5 +1,5 @@
 import React from 'react';
-import logoSrc from '@assets/логотип_1784805497394.jpg';
+import logoSrc from '@assets/логотип_2_1785315694578.png';
 import { Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import { useLang } from '@/contexts/LanguageContext';
 import { gtagEvent } from '@/lib/gtag';

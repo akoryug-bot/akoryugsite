@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
-import logoSrc from '@assets/логотип_1784805497394.jpg';
+import logoSrc from '@assets/логотип_2_1785315694578.png';
 import tkeLogoSrc from '@assets/tke_dis_logo_portrait_rgb_gradient_1784884264240.jpg';
 import koyoLogoSrc from '@assets/OIP_1785234040029.webp';
 import { useLang } from '@/contexts/LanguageContext';
