@@ -38,7 +38,7 @@ export function Hero() {
           <span className="text-sm font-medium tracking-wider text-white/90 uppercase">{t('hero', 'badge')}</span>
         </motion.div>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
@@ -46,7 +46,7 @@ export function Hero() {
         >
           {t('hero', 'title1')}<span className="text-primary">{t('hero', 'title2')}</span>
           <br />{t('hero', 'title3')}
-        </motion.h1>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
