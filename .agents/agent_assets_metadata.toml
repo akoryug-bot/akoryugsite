@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "IqLNT0XVYUdb-it87qzYM"
+uri = "file://attached_assets/email_banner_akoryug_1200x400.png"
+type = "image"
+title = "Email баннер АКОР ЮГ — 1200×400 px"
