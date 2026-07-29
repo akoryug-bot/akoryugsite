@@ -6,3 +6,9 @@ id = "IqLNT0XVYUdb-it87qzYM"
 uri = "file://attached_assets/email_banner_akoryug_1200x400.png"
 type = "image"
 title = "Email баннер АКОР ЮГ — 1200×400 px"
+
+[[outputs]]
+id = "FNF7C1AaZL9l_VD43cC9K"
+uri = "file://attached_assets/%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%90%D0%9A%D0%9E%D0%A0_%D0%AE%D0%93_1785318319042.png"
+type = "image"
+title = "Email баннер АКОР ЮГ (утверждённый)"
